@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use(
-  cors()
+  cors({ origin: '*', })
 );
 
 app.use("/api/v1", router);
