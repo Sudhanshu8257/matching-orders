@@ -143,6 +143,16 @@ export const getPendingOrders = async (req, res, next) => {
   }
 };
 
+export const clearOrders = async (req, res, next) => {
+  try {
+    await PendingOrder.deleteMany({});
+    await CompletedOrder.deleteMany({});
+    res.status(200).json({ success: true, message: 'Orders collections cleared successfully.' });
+  } catch (error) {
+    next(error);
+  }
+};
+
 /* 
   Priority Queue Usage in Order Matching System:
 
