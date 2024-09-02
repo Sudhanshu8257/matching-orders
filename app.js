@@ -6,9 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use(
-  cors({
-    origin: ["http://localhost:3001","https://orders-chart.vercel.app/"],
-  })
+  cors()
 );
 
 app.use("/api/v1", router);
