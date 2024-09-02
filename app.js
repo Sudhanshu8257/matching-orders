@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: true,  // Allow access from any origin
+    origin: ["http://localhost:3001","https://orders-chart.vercel.app/"],
   })
 );
 
